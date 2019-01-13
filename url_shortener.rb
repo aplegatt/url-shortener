@@ -1,9 +1,8 @@
 require 'sinatra'
 require 'sequel'
-require 'sqlite3'
 require 'securerandom'
 
-DB = Sequel.sqlite('short_urls.db')
+DB = Sequel.connect(ENV['DATABASE_URL'])
 
 unless DB.tables.include?(:urls)
   DB.create_table :urls do

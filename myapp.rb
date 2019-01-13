@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'yaml/store'
 require 'sequel'
 require 'sqlite3'
 require 'securerandom'

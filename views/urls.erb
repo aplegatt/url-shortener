@@ -1,0 +1,13 @@
+<p class="pb-4 text-white">Urls</p>
+<table class="p-1 border border-green text-white inline-block">
+  <tr>
+    <th>Short url</td>
+      <th>Long url</td>
+  </tr>
+  <% @urls.each do |url| %>
+    <tr>
+      <td class="p-1 border border-green"><%= url[:short_url] %></td>
+      <td class="p-1 border border-green"><%= url[:long_url] %></td>
+    </tr>
+  <% end %>
+</table>

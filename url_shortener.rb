@@ -20,7 +20,11 @@ end
 
 post '/shorten' do
   @long_url = params['url']
-  @short_url = SecureRandom.base64(6)
+
+  loop do
+    @short_url = SecureRandom.base64(6)
+    break if urls.where(short_url: @short_url).first.nil?
+  end
 
   urls.insert(long_url: @long_url, short_url: @short_url)
 
